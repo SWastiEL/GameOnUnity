@@ -59,6 +59,7 @@
      <Compile Include="Assets\_Screpts\HealthSystem.cs" />
      <Compile Include="Assets\_Screpts\Mover.cs" />
      <Compile Include="Assets\_Screpts\PlayerController.cs" />
+     <Compile Include="Assets\_Screpts\RanomRotatator.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Unity/Новая папка/GameOnUnity/Space/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
