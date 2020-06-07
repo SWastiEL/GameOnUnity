@@ -121,6 +121,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &9852082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9852083}
+  m_Layer: 0
+  m_Name: ShotSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9852083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9852082}
+  m_LocalRotation: {x: -0.7071068, y: 0.7071068, z: -0, w: 0}
+  m_LocalPosition: {x: -0, y: -80, z: 0}
+  m_LocalScale: {x: 66.66666, y: 66.66666, z: 66.66663}
+  m_Children: []
+  m_Father: {fileID: 146891923}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &146891916 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 1cb7de1dce4871a4ebeadd03418ba7ff,
@@ -146,6 +176,9 @@ MonoBehaviour:
     xMax: 8
     yMin: -4.3
     yMax: 4.3
+  bolt: {fileID: 8415991393575191502, guid: 7cc8cfed5945b7249b5602488ad4a16e, type: 3}
+  shotSpawn: {fileID: 9852082}
+  fireRate: 0.25
 --- !u!54 &146891918
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -189,6 +222,32 @@ CapsuleCollider:
   m_Height: 144.7
   m_Direction: 1
   m_Center: {x: -0.000010623753, y: 3.4407623, z: 2.6}
+--- !u!4 &146891923 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 1cb7de1dce4871a4ebeadd03418ba7ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 2005717278}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &146891924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146891916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191b3b30605ddd248a1599766cd4f568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  numberOfLives: 3
+  lives:
+  - {fileID: 1468983610}
+  - {fileID: 418139733}
+  - {fileID: 869888173}
+  fullLives: {fileID: 21300000, guid: 40379493720f0814cbdcf1589c20e064, type: 3}
+  emptyLives: {fileID: 21300000, guid: defcbc1acbc9bab4bb4b9bb891fb2d0e, type: 3}
 --- !u!1 &415561312
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,7 +698,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fa6d6d3849a376546b8a6c3b830112f1, type: 2}
+  - {fileID: 2100000, guid: b1fef29514dac31409a17da57f635108, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1317,6 +1376,36 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1684828842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1684828843}
+  m_Layer: 0
+  m_Name: Boundary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1684828843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684828842}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.051611423, y: 0, z: -0.11101644}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2005717278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1335,6 +1424,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 1cb7de1dce4871a4ebeadd03418ba7ff, type: 3}
       propertyPath: m_Icon
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1cb7de1dce4871a4ebeadd03418ba7ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1cb7de1dce4871a4ebeadd03418ba7ff, type: 3}
       propertyPath: m_LocalPosition.x
