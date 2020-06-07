@@ -28,6 +28,10 @@ public class HealthSystem : MonoBehaviour
         {
             health = numberOfLives;
         }
+        else if (health<=0)
+        {
+            health = 0;
+        }
 
         for (int i = 0; i < lives.Length; i++)
         {
