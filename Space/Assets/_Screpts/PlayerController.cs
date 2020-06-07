@@ -2,9 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class Boundary
+{
+    public float xMin, xMax, yMin, yMax;
+}
+
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    public float tilt;
+    public Boundary boundary;
 
     void FixedUpdate()
     {
@@ -15,5 +23,11 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3 (moveHorizontal, moveVertical, 0f);
         rb.velocity = movement*speed;
+
+        rb.position = new Vector3(
+            Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax), 
+            Mathf.Clamp(rb.position.y, boundary.yMin, boundary.yMax), 
+            0f);
+        rb.rotation = Quaternion.Euler((180+rb.velocity.y)*tilt, 0f, 90f);
     }
 }

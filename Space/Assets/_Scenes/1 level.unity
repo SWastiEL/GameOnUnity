@@ -127,6 +127,25 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2005717278}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &146891917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146891916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9f0fe12502b4f48b1a09e118ec55bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  tilt: 3
+  boundary:
+    xMin: -2
+    xMax: 8
+    yMin: -4.3
+    yMax: 4.3
 --- !u!54 &146891918
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -620,7 +639,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b1fef29514dac31409a17da57f635108, type: 2}
+  - {fileID: 2100000, guid: fa6d6d3849a376546b8a6c3b830112f1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -658,7 +677,7 @@ Transform:
   m_GameObject: {fileID: 718451346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6, y: 0, z: 10}
-  m_LocalScale: {x: 19.701807, y: 19.701807, z: 19.701807}
+  m_LocalScale: {x: 20, y: 20, z: 19.701807}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -773,7 +792,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.049439307, g: 0.43610868, b: 0.9528302, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1363,15 +1382,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1cb7de1dce4871a4ebeadd03418ba7ff, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.020000001
+      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1cb7de1dce4871a4ebeadd03418ba7ff, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.020000001
+      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1cb7de1dce4871a4ebeadd03418ba7ff, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.020000014
+      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 1cb7de1dce4871a4ebeadd03418ba7ff, type: 3}
       propertyPath: m_Enabled
