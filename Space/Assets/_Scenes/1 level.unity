@@ -1659,6 +1659,7 @@ MonoBehaviour:
   spawnWait: 0.5
   startWait: 1
   waveWait: 3
+  scoreText: {fileID: 1420160459}
 --- !u!4 &2012350820
 Transform:
   m_ObjectHideFlags: 0
