@@ -61,6 +61,7 @@
      <Compile Include="Assets\_Screpts\Mover.cs" />
      <Compile Include="Assets\_Screpts\PlayerController.cs" />
      <Compile Include="Assets\_Screpts\RanomRotatator.cs" />
+     <None Include="Assets\Hovl Studio\Procedural fire\Shaders\FireSphere.shader" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Unity/Новая папка/GameOnUnity/Space/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
