@@ -57,6 +57,7 @@
   <ItemGroup>
      <Compile Include="Assets\_Screpts\DestroyByBoundary.cs" />
      <Compile Include="Assets\_Screpts\DestroyByContact.cs" />
+     <Compile Include="Assets\_Screpts\DestroyByTime.cs" />
      <Compile Include="Assets\_Screpts\GameController.cs" />
      <Compile Include="Assets\_Screpts\HealthSystem.cs" />
      <Compile Include="Assets\_Screpts\Mover.cs" />
