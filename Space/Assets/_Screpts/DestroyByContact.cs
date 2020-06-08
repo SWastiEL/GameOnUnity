@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestroyByContact : MonoBehaviour
 {
     public GameObject explosion;
-    //public GameObject playerExplosion;
+    public GameObject playerExplosion;
 
     void OnTriggerEnter(Collider collider)
     {
@@ -14,10 +14,10 @@ public class DestroyByContact : MonoBehaviour
             return;
         }
         Instantiate(explosion, transform.position, transform.rotation);
-        //if (collider.tag=="Player")
-        //{
-        //    Instantiate(playerExplosion, collider.transform.position, collider.transform.rotation);
-        //}
+        if (collider.tag == "Player")
+        {
+            Instantiate(playerExplosion, collider.transform.position, collider.transform.rotation);
+        }
         Destroy(collider.gameObject);
         Destroy(gameObject);
     }

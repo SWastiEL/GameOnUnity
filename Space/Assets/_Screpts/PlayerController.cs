@@ -20,23 +20,6 @@ public class PlayerController : MonoBehaviour
 
     private float nextFire = 0.0f;
 
-    void FixedUpdate()
-    {
-        Rigidbody rb = GetComponent<Rigidbody>();
-
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        Vector3 movement = new Vector3 (moveHorizontal, moveVertical, 0f);
-        rb.velocity = movement*speed;
-
-        rb.position = new Vector3(
-            Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax), 
-            Mathf.Clamp(rb.position.y, boundary.yMin, boundary.yMax), 
-            0f);
-        rb.rotation = Quaternion.Euler((180+rb.velocity.y)*tilt, 0f, 90f);
-    }
-
     void Update()
     {
         if (Input.GetButton("Fire1")&&Time.time>nextFire)
@@ -44,5 +27,22 @@ public class PlayerController : MonoBehaviour
             nextFire = Time.time + fireRate;
             Instantiate(bolt, shotSpawn.transform.position, shotSpawn.transform.rotation);
         }
+    }
+
+    void FixedUpdate()
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
+
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f);
+        rb.velocity = movement * speed;
+
+        rb.position = new Vector3(
+            Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
+            Mathf.Clamp(rb.position.y, boundary.yMin, boundary.yMax),
+            0f);
+        rb.rotation = Quaternion.Euler((180 + rb.velocity.y) * tilt, 0f, 90f);
     }
 }
