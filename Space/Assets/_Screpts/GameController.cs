@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject healthSystem;
     public GameObject hazard;
     public Vector3 spawnValues;
     public int hazardCount;
@@ -20,6 +21,8 @@ public class GameController : MonoBehaviour
     private bool gameOver;
     private bool restart;
     private int score;
+
+    public bool GameOVER { get => gameOver;}
 
     void Start()
     {
@@ -80,7 +83,15 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverText.text = "Game Over";
-        gameOver = true;
+        if (healthSystem.GetComponent<HealthSystem>().health > 1)
+        {
+            healthSystem.GetComponent<HealthSystem>().health--;
+        }
+        else if (healthSystem.GetComponent<HealthSystem>().health <= 1)
+        {
+            healthSystem.GetComponent<HealthSystem>().health--;
+            gameOverText.text = "Game Over";
+            gameOver = true;
+        }
     }
 }

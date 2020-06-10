@@ -34,8 +34,16 @@ public class DestroyByContact : MonoBehaviour
             Instantiate(playerExplosion, collider.transform.position, collider.transform.rotation);
             gameController.GameOver();
         }
+        if (collider.tag == "Ammo")
+        {
+            Destroy(collider.gameObject);
+        }
+        if (gameController.GameOVER)
+        {
+            Destroy(collider.gameObject);
+        }
         gameController.AddScore(scoreValue);
-        Destroy(collider.gameObject);
+        //Destroy(collider.gameObject);
         Destroy(gameObject);
     }
 }
