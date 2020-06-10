@@ -26,7 +26,7 @@ public class LevelController : MonoBehaviour
         levelComplete = PlayerPrefs.GetInt("LevelComplete");
     }
 
-    public void isEndGame()
+    public void IsEndGame()
     {
         if (sceneIndex==3)
         {
@@ -40,6 +40,7 @@ public class LevelController : MonoBehaviour
                 PlayerPrefs.SetInt("LevelComplete", sceneIndex);
                 Invoke("NextLevel", 1f);
             }
+            else Invoke("NextLevel", 1f);
         }
     }
 

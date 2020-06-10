@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public float spawnWait;
     public float startWait;
     public float waveWait;
+    public int needDestroy;
 
     public Text restartText;
     public Text gameOverText;
@@ -21,6 +22,7 @@ public class GameController : MonoBehaviour
     private bool gameOver;
     private bool restart;
     private int score;
+    private int destroyCount;
 
     public bool GameOVER { get => gameOver;}
 
@@ -31,6 +33,11 @@ public class GameController : MonoBehaviour
         gameOverText.text = "";
         restartText.text = "";
         score = 0;
+        if (SceneManager.GetActiveScene().buildIndex>1)
+        {
+            score = PlayerPrefs.GetInt("Score");
+        }
+        destroyCount = 0;
         UpdateScore();
 
         StartCoroutine(SpawnWaves());
@@ -67,6 +74,13 @@ public class GameController : MonoBehaviour
                 restart = true;
                 break;
             }
+            if (destroyCount>=needDestroy)
+            {
+                gameOverText.text = "Congratulation!";
+                PlayerPrefs.SetInt("Score", score);
+                LevelController.instance.IsEndGame();
+                break;
+            }
         }
     }
 
@@ -78,6 +92,7 @@ public class GameController : MonoBehaviour
     public void AddScore(int newScoreValue)
     {
         score += newScoreValue;
+        destroyCount++;
         UpdateScore();
     }
 

@@ -1631,6 +1631,7 @@ MonoBehaviour:
   spawnWait: 0.5
   startWait: 1
   waveWait: 0
+  needDestroy: 3
   restartText: {fileID: 1508665581}
   gameOverText: {fileID: 315087599}
   scoreText: {fileID: 594375026}
