@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 191b3b30605ddd248a1599766cd4f568
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - fullLives: {fileID: 21300000, guid: 40379493720f0814cbdcf1589c20e064, type: 3}
+  - emptyLives: {fileID: 21300000, guid: defcbc1acbc9bab4bb4b9bb891fb2d0e, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
